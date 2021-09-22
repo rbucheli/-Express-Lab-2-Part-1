@@ -3,7 +3,7 @@ const app = express();
 
 const port = 3000;
 
-const magicBall = ["It is certain", "It is decidedly so", "Without a doubt", "Yes definitely","You may rely on it", "As I see it yes", "Most likely", "Outlook good","Yes", "Signs point to yes", "Reply hazy try again", "Ask again later","Better not tell you now", "Cannot predict now", "Concentrate and ask again","Don't count on it", "My reply is no", "My sources say no","Outlook not so good", "Very doubtful"]
+const magicBall = ["It is certain", "It is decidedly so", "Without a doubt", "Yes definitely", "You may rely on it", "As I see it yes", "Most likely", "Outlook good", "Yes", "Signs point to yes", "Reply hazy try again", "Ask again later", "Better not tell you now", "Cannot predict now", "Concentrate and ask again", "Don't count on it", "My reply is no", "My sources say no", "Outlook not so good", "Very doubtful"]
 
 // app.get('/greeting/:name', (req, res) => {
 //   // console.log('There you are!')
@@ -20,7 +20,7 @@ app.listen(3000);
 //   let tipPercentageX = req.params.tipPercentage
 // // define variables to put into equation later 
 //   const totalTip = Number(totalX / 100) * Number(tipPercentageX);
-  
+
 //   res.send("Tip is " + totalTip);
 // });
 
@@ -29,10 +29,10 @@ app.listen(3000);
 //   res.send(responses[req.params.indexOfResponses]);
 // });
 // Above code gives me access to indices by 3000/magic/0
-  
+
 app.get('/magic/:question', (req, res) => {
   let response = magicBall[Math.floor(Math.random() * magicBall.length)];
-  res.send(response);
+  res.send(req.params.question + "<h1>" + response + "</h1>");
 });
 
 // URL Query?
